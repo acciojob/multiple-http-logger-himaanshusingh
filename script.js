@@ -12,7 +12,7 @@ async function fetchAndLog(urls) {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log("Response from", url, ":", data);
+      console.log({ url, data });
     } catch (error) {
       console.error("Error fetching", url, ":", error);
     }
