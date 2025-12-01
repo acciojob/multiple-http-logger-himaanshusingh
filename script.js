@@ -5,4 +5,18 @@ const urls = [
 ];
 
 // Don't change the above line
-// Write your code here
+// Write your code here :
+
+async function fetchAndLog(urls) {
+  for (const url of urls) {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log("Response from", url, ":", data);
+    } catch (error) {
+      console.error("Error fetching", url, ":", error);
+    }
+  }
+}
+
+fetchAndLog(urls);
